@@ -1,10 +1,11 @@
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()" >
   Add Server
 </button>
-<input type="text" class="form-control" [(ngModel)]="serverName" />
-<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+<br />
+<label for="twoway">2 way: </label>
+<input id="twoway" type="text" class="form-control" [(ngModel)]="serverName" />
+<label for="onevent">On Event: </label>
+<input id="onevent" type="text" class="form-control" (input)="onUpdateServerName($event)" />
 <p [innerText]="serverName"></p>
-<p [innerText]="serverCreationStatus"></p>
-<app-server></app-server>
-<app-server></app-server>
-<app-server></app-server>
+<p *ngIf="serverCreated" [innerText]="serverCreationStatus"></p>
+<app-server *ngFor="let server of servers"></app-server>
