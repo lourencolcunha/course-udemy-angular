@@ -1,0 +1,7 @@
+<p>
+  <button class="btn btn-lg btn-default" type="button" (click)="toggleDetails()">Display Details</button>
+</p>
+<p *ngIf="showDetails">Showing details:</p>
+<div class="container" *ngIf="showDetails">
+  <app-log-message *ngFor="let entry of entries; let i = index" [timestamp]="entry" [index]="i" ></app-log-message>
+</div>
