@@ -16,7 +16,7 @@ export class LogggerComponent implements OnInit {
 
   ngOnInit() {
     this._showDetails = false;
-    this.entries = []n
+    this.entries = [];
   }
 
   toggleDetails() {
